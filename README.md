@@ -1,6 +1,7 @@
 # Wellio – lekka aplikacja „wellbeing”
 
 Wellio to prosta, przyjazna aplikacja pomagająca budować drobne, codzienne nawyki: nawadnianie, krótkie przerwy od ekranu, śledzenie nawyków i refleksję nad nastrojem. Interfejs jest lekki, responsywny i oparty na komponentach.
+<img width="1898" height="904" alt="image" src="https://github.com/user-attachments/assets/1ae37978-cff0-4517-af9f-71b2aeeef085" />
 
 ## Funkcje
 
