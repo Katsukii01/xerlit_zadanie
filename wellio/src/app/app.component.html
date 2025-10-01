@@ -1,0 +1,45 @@
+<mat-toolbar class="app-toolbar">
+  <a class="brand" routerLink="/" aria-label="Wellio home">
+    <img src="assets/logo.png" alt="Wellio" class="brand-logo" />
+    <span class="brand-name">Calm Center</span>
+  </a>
+
+  <!-- Hamburger widoczny tylko na mobile -->
+  <button
+    mat-icon-button
+    class="mobile-menu-btn"
+    (click)="sidenav.toggle()"
+    [class.is-open]="sidenav.opened"
+    aria-label="Menu"
+  >
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <!-- Nawigacja desktop -->
+  <nav class="nav desktop-nav">
+    <a class="nav-link" mat-button routerLink="/water" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Water</a>
+    <a class="nav-link" mat-button routerLink="/habits" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Habits</a>
+    <a class="nav-link" mat-button routerLink="/mood" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Mood</a>
+    <a class="nav-link" mat-button routerLink="/breaks" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Breaks</a>
+  </nav>
+
+  <span class="toolbar-end"></span>
+</mat-toolbar>
+
+<!-- Sidenav -->
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="over" position="end" class="mobile-sidenav" aria-label="Mobile navigation" (openedChange)="isSidenavOpened = $event">
+    <nav>
+      <a class="nav-link" mat-list-item routerLink="/water" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="sidenav.close()">Water</a>
+      <a class="nav-link" mat-list-item routerLink="/habits" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="sidenav.close()">Habits</a>
+      <a class="nav-link" mat-list-item routerLink="/mood" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="sidenav.close()">Mood</a>
+      <a class="nav-link" mat-list-item routerLink="/breaks" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="sidenav.close()">Breaks</a>
+    </nav>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <div class="container dash-glass" [@routeFadeSlide]>
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
